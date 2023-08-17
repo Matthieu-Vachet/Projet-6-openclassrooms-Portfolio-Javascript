@@ -13,6 +13,7 @@ function genererWorks(works) {
     // Création des balises //
     const imageElement = document.createElement("img");
     imageElement.src = article.imageUrl;
+    imageElement.alt = article.title;
     const nomElement = document.createElement("figcaption");
     nomElement.innerText = article.title;
 

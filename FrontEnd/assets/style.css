@@ -126,7 +126,9 @@ li:hover {
 	margin-bottom: 1em;
 }
 
-/* AJOUT CODE PROJET BOUTTONS FILTRES */
+/* 
+AJOUT CODE PROJET BOUTTONS FILTRES START
+ */
 
 #portfolio .button-filtre {
 	display: flex;
@@ -170,7 +172,10 @@ li:hover {
 	padding: 9px 11px;
 }
 
-
+/* 
+AJOUT CODE PROJET BOUTTONS FILTRES END
+ */
+ 
 .gallery {
 	width: 100%;
 	display: grid;
