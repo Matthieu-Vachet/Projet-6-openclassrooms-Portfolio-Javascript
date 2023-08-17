@@ -145,6 +145,7 @@ AJOUT CODE PROJET BOUTTONS FILTRES START
 	line-height: normal;
 	justify-content: center;
 	text-align: center;
+	padding: 9px 10px;
 	border-radius: 60px;
 	border: 1px solid #1D6154;
 	color: #1D6154;
@@ -159,23 +160,10 @@ AJOUT CODE PROJET BOUTTONS FILTRES START
 	transform: scale(1.1);
 }
 
-#portfolio .button-filtre .filter-all {
-	padding: 9px 30px;
-}
-#portfolio .button-filtre .filter-objets {
-	padding: 9px 20px;
-}
-#portfolio .button-filtre .filter-appartements {
-	padding: 9px 15px;
-}
-#portfolio .button-filtre .filter-hotels {
-	padding: 9px 11px;
-}
-
 /* 
 AJOUT CODE PROJET BOUTTONS FILTRES END
  */
- 
+
 .gallery {
 	width: 100%;
 	display: grid;
