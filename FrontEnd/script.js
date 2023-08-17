@@ -57,3 +57,44 @@ works.forEach((work) => {
   const categoryName = work.category.name;
   console.log(categoryName); // Affiche le nom de la catégorie pour chaque projet
 });
+
+//
+// FILTRE DES PROJETS VIA DATA-CATEGORY
+//
+// Sélection de tous les boutons de catégorie
+const buttonsCategories = document.querySelectorAll("button");
+
+// Ajout d'un gestionnaire d'événements à chaque bouton
+buttonsCategories.forEach(button => {
+  button.addEventListener("click", () => {
+    // Récupération du nom de la catégorie du bouton (en supprimant les espaces supplémentaires)
+    const category = button.innerText.trim();
+
+    // Si le bouton "Tous" est cliqué
+    if (category === "Tous") {
+      // Sélection de tous les éléments de travail avec un attribut data-category
+      const allWorkElements = document.querySelectorAll("[data-category]");
+
+      // Affichage de tous les éléments de travail
+      allWorkElements.forEach(workElement => {
+        workElement.style.display = "block";
+      });
+    } else {
+      // Sélection des éléments de travail correspondant à la catégorie du bouton
+      const workElements = document.querySelectorAll(`[data-category="${category}"]`);
+
+      // Affichage des éléments de travail correspondants
+      workElements.forEach(workElement => {
+        workElement.style.display = "block";
+      });
+
+      // Sélection des autres éléments de travail qui ont une catégorie différente
+      const otherWorkElements = document.querySelectorAll(`[data-category]:not([data-category="${category}"])`);
+
+      // Masquage des autres éléments de travail
+      otherWorkElements.forEach(workElement => {
+        workElement.style.display = "none";
+      });
+    }
+  });
+});
