@@ -125,6 +125,52 @@ li:hover {
 	text-align: center;
 	margin-bottom: 1em;
 }
+
+/* AJOUT CODE PROJET BOUTTONS FILTRES */
+
+#portfolio .button-filtre {
+	display: flex;
+	justify-content: center;
+	gap: 15px;
+	margin: 51px 0;
+}
+
+#portfolio .button-filtre button {
+	height: 37px;
+	font-family: 'Syne';
+	font-weight: 700;
+	font-size: 16px;
+	line-height: normal;
+	justify-content: center;
+	text-align: center;
+	border-radius: 60px;
+	border: 1px solid #1D6154;
+	color: #1D6154;
+	cursor: pointer;
+	background-color: white;
+	transition: all 0.4s ease;
+}
+
+#portfolio .button-filtre button:hover {
+	background-color: #1D6154;
+	color: white;
+	transform: scale(1.1);
+}
+
+#portfolio .button-filtre .filter-all {
+	padding: 9px 30px;
+}
+#portfolio .button-filtre .filter-objets {
+	padding: 9px 20px;
+}
+#portfolio .button-filtre .filter-appartements {
+	padding: 9px 15px;
+}
+#portfolio .button-filtre .filter-hotels {
+	padding: 9px 11px;
+}
+
+
 .gallery {
 	width: 100%;
 	display: grid;
