@@ -9,7 +9,7 @@ function genererWorks(works) {
     const article = works[i];
     // Récupération de l'élément du DOM qui accueillera les traveaux //
     const sectionGallery = document.querySelector(".gallery");
-    // Création d’une balise dédiée à un travail //
+    // Création d’une balise dédiée à un projet //
     const worksElement = document.createElement("figure");
 
     // Création des balises //
@@ -19,16 +19,17 @@ function genererWorks(works) {
     const nomElement = document.createElement("figcaption");
     nomElement.innerText = article.title;
 
-    // Ajouter le nom de la catégorie comme attribut de données à worksElement
+    // Ajout du nom de la catégorie comme attribut de données à worksElement
     worksElement.setAttribute("data-category", article.category.name);
 
-    // On rattache la balise article a la section Gallerie //
+    // On rattache la balise article a la section Gallery //
     sectionGallery.appendChild(worksElement);
     worksElement.appendChild(imageElement);
     worksElement.appendChild(nomElement);
   }
 }
 genererWorks(works);
+
 
 //
 // RECUPERATION DES CATEGORIES
@@ -40,7 +41,7 @@ const categories = await reponseCategories.json();
 function genererCategories(categories) {
   for (let i = 0; i < categories.length; i++) {
     const filter = categories[i];
-    // Récupération de l'élément du DOM qui accueillera les traveaux //
+    // Récupération de l'élément du DOM qui accueillera les bouttons filtre //
     const sectionFilter = document.querySelector(".button-filtre");
 
     // Création de la balise button //
@@ -57,6 +58,7 @@ works.forEach((work) => {
   const categoryName = work.category.name;
   console.log(categoryName); // Affiche le nom de la catégorie pour chaque projet
 });
+
 
 //
 // FILTRE DES PROJETS VIA DATA-CATEGORY
@@ -98,3 +100,4 @@ buttonsCategories.forEach(button => {
     }
   });
 });
+
