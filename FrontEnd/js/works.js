@@ -1,10 +1,12 @@
 // Fonction pour générer les éléments HTML correspondant à chaque projet
 export function genererWorks(works) {
-    // Parcourir les projets dans le tableau "works"
-    for (let i = 0; i < works.length; i++) {
-      const article = works[i];
-      // Sélectionner l'élément HTML avec la classe "gallery"
-      const sectionGallery = document.querySelector(".gallery");
+  // Parcourir les projets dans le tableau "works"
+  for (let i = 0; i < works.length; i++) {
+    const article = works[i];
+    // Sélectionner l'élément HTML avec la classe "gallery"
+    const sectionGallery = document.querySelector(".gallery");
+    // Vérifier si l'élément parent existe avant d'ajouter l'enfant
+    if (sectionGallery) {
       // Créer un élément <figure> pour représenter le projet
       const worksElement = document.createElement("figure");
       // Créer un élément <img> pour afficher l'image du projet
@@ -25,6 +27,8 @@ export function genererWorks(works) {
       worksElement.appendChild(imageElement);
       // Ajouter l'élément <figcaption> à l'élément <figure>
       worksElement.appendChild(nomElement);
+    } else {
+      console.log("L'élément parent avec la classe 'gallery' n'existe pas");
     }
   }
-  
+}

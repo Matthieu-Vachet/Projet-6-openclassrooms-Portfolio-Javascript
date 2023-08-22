@@ -1,10 +1,12 @@
 // Fonction pour générer les boutons de catégorie en fonction des catégories fournies
 export function genererCategories(categories) {
+  // Sélectionner l'élément HTML avec la classe "button-filtre"
+  const sectionFilter = document.querySelector(".button-filtre");
+  // Vérifier si l'élément parent existe avant de continuer
+  if (sectionFilter) {
     // Parcourir les catégories dans le tableau "categories"
     for (let i = 0; i < categories.length; i++) {
       const filter = categories[i];
-      // Sélectionner l'élément HTML avec la classe "button-filtre"
-      const sectionFilter = document.querySelector(".button-filtre");
       // Créer un nouvel élément <button> pour représenter le filtre de catégorie
       const buttonElement = document.createElement("button");
       // Définir le texte du bouton en utilisant le nom de la catégorie
@@ -12,7 +14,10 @@ export function genererCategories(categories) {
       // Ajouter le bouton à l'élément HTML avec la classe "button-filtre"
       sectionFilter.appendChild(buttonElement);
     }
+  } else {
+    console.log("L'élément parent avec la classe 'button-filtre' n'existe pas");
   }
+}
   
   // Fonction pour filtrer les projets en fonction de la catégorie sélectionnée
   export function filtrerProjets() {
