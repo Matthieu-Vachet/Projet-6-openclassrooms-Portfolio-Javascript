@@ -176,7 +176,8 @@ nav ul {
 }
 nav li {
   padding: 0 10px;
-  font-size: 1.2em;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 li:hover {
@@ -208,6 +209,12 @@ li:hover {
 #portfolio h2 {
   text-align: center;
   margin-bottom: 1em;
+}
+
+.active {
+	color: black;
+	font-size: 19px;
+	font-weight: 700;
 }
 
 
@@ -391,9 +398,9 @@ footer nav ul {
 }
 
 .login-section .login-btn:hover {
-  background-color: #fff;
-  color: #1d6154;
-  border: 1px solid #1d6154;
+  background-color: #0E2F28;
+  color: #fff;
+  border: 1px solid #0E2F28;
 }
 
 .login-section .forgot-password {
