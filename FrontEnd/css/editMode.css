@@ -1,0 +1,74 @@
+#mode-edition {
+    width: 100%;
+    height: 50px;
+    margin: 0;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    gap: 15px;
+    font-family: "work sans";
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.btn-edition {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: black;
+    color: white;
+    font-family: "work sans";
+    font-weight: 500;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+i {
+    font-size: 17px;
+    margin-right: 7px;
+}
+
+.btn-publish {
+    width: 210px;
+    height: 35px;
+    text-align: center;
+    background-color: white;
+    border: none;
+    border-radius: 60px;
+    font-family: "work sans";
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    cursor: pointer;
+}
+
+.btn-edit {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: white;
+    color: black;
+    font-family: "work sans";
+    font-weight: 500;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+.edit-image {
+    margin-top: 15px;
+    margin-left: 55px;
+}
+
+.works-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
