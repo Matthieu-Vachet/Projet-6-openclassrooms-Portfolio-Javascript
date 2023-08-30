@@ -1,6 +1,7 @@
 // Importer les fonctions nécessaires depuis les fichiers correspondants
 import { genererWorks } from "./works.js";
 import { genererCategories, filtrerProjets } from "./categories.js";
+import { modeEditor, logoutUser } from "./editMode.js";
 
 // Définir les URL des API pour les projets et les catégories
 const apiUrlWorks = "http://localhost:5678/api/works";
@@ -26,6 +27,22 @@ async function afficherCategories() {
   genererCategories(categories);
 }
 
+// Fonction pour mettre à jour le bouton de connexion/déconnexion
+function mettreAJourBoutonConnexion() {
+  const boutonLogin = document.getElementById("login");
+
+  if (localStorage.getItem("token")) {
+    // Utilisateur connecté
+    boutonLogin.textContent = "Logout";
+    boutonLogin.removeEventListener("click", logoutUser); // Supprimer l'écouteur d'événements existant
+    boutonLogin.addEventListener("click", (event) => logoutUser(event)); // Utiliser la fonction logoutUser() avec event
+  } else {
+    // Utilisateur déconnecté
+    boutonLogin.textContent = "Login";
+    boutonLogin.removeEventListener("click", logoutUser); // Supprimer l'écouteur d'événements existant
+  }
+}
+
 // Fonction asynchrone pour initialiser le projet
 async function initialiserProjet() {
   // Attendre l'affichage des projets
@@ -34,6 +51,8 @@ async function initialiserProjet() {
   await afficherCategories();
   // Appeler la fonction filtrerProjets pour activer le filtrage des projets par catégorie
   filtrerProjets();
+  // Mettre à jour le bouton de connexion/déconnexion
+  mettreAJourBoutonConnexion();
 }
 
 // Appeler la fonction initialiserProjet pour démarrer le projet
