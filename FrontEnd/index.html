@@ -32,6 +32,48 @@
 			</ul>
 		</nav>
 	</header>
+
+	<aside class="modal1 modal-main">
+		<div class="modal-wrapper">
+			<div class="close-btn"><i class="fa-solid fa-xmark"></i></div>
+			<h3>Gallerie photo</h3>
+			<div class="miniature-gallery"></div>
+			<div class="separator"></div>
+			<button>Ajouter une photo</button>
+			<p class="suppr">Supprimer la galerie</p>
+		</div>
+	</aside>
+
+	<aside class="modal1 modal-add">
+		<div class="modal-wrapper modal-wrapper-add">
+			<div class="close-btn"><i class="fa-solid fa-xmark"></i></div>
+			<h3>Ajout photo</h3>
+			<form class="add-form" name="add-form" method="POST" enctype="multipart/form-data">
+				<div class="add-file-zone">
+					<i class="fa-regular fa-image"></i>
+					<label for="add-file">+ Ajouter photo</label>
+					<p>jpg, png : 4Mo max</p>
+					<input type="file" name="image" id="add-file" accept=".png, .jpeg, .jpg">
+				</div>
+				<div class="add-file-text">
+					<label for="file-title">Titre</label>
+					<input type="text" name="title" id="file-title">
+				</div>
+
+				<div class="add-file-text">
+					<label for="file-category">Catégorie</label>
+					<select name="category" id="file-category">
+						<option></option>
+						</select>
+				</div>
+				<div class="separator"></div>
+
+				<input type="submit" id="file-submit" value="Valider">
+			</form>
+		</div>
+	</aside>
+
+
 	<main>
 		<section id="introduction">
 			<figure>
