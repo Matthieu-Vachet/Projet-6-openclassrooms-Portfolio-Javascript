@@ -1,4 +1,3 @@
-
 // Fonction pour générer les éléments HTML correspondant à chaque projet
 export function genererWorks(works) {
   // Parcourir les projets dans le tableau "works"

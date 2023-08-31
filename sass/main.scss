@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+// 1. Configuration et aides
+@import "./utils/variables", "./utils/mixins";
+
+// 3. Trucs de base
+@import "./base/reset", "./base/base";
+
+// 4. Sections liées à la mise en page
+@import "./layout/header", "./layout/main","./layout/footer", "./layout/mode-edition";
+
+// 5. Composants
+@import "./components/button", "./components/modal-main", "./components/modal-add";
+
+// 6. Styles spécifiques à la page
+@import "./pages/login";

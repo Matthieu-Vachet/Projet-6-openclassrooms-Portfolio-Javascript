@@ -53,7 +53,7 @@ if (token) {
 
 // Fonction pour rediriger vers la page d'accueil
 function redirectToHome() {
-  window.location.href = "/FrontEnd/index.html";
+  window.location.href = "/index.html";
 }
 
 // Fonction pour déconnecter l'utilisateur

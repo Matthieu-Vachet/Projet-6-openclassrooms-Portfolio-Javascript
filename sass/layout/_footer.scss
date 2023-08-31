@@ -1,0 +1,13 @@
+// -----------------------------------------------------------------------------
+// Ce fichier contient tous les styles liés au pied de page du site/de l'application.
+// -----------------------------------------------------------------------------
+
+footer {
+  & nav {
+    & ul {
+      display: flex;
+      justify-content: flex-end;
+      margin: 2em;
+    }
+  }
+}

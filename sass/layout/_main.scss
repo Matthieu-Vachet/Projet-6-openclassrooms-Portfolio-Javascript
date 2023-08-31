@@ -1,0 +1,122 @@
+main {
+  #introduction {
+    display: flex;
+    align-items: center;
+
+    & figure {
+      flex: 1;
+
+      & img {
+        display: block;
+        margin: auto;
+        width: 80%;
+      }
+    }
+    & article {
+      flex: 1;
+
+      & h2 {
+        margin-bottom: 1em;
+      }
+
+      & p {
+        margin-bottom: 0.5em;
+      }
+    }
+  }
+
+  #portfolio {
+    & .works-title h2 {
+      text-align: center;
+    }
+
+    & .button-filtre {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 51px 0;
+
+      & button {
+        height: 37px;
+        font-family: "Syne";
+        font-weight: 700;
+        font-size: 16px;
+        line-height: normal;
+        justify-content: center;
+        text-align: center;
+        padding: 9px 10px;
+        border-radius: 60px;
+        border: 1px solid #1d6154;
+        color: #1d6154;
+        cursor: pointer;
+        background-color: white;
+        transition: all 0.4s ease;
+      }
+
+      & button:hover {
+        background-color: #1d6154;
+        color: white;
+        transform: scale(1.1);
+      }
+    }
+
+    & .gallery {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-column-gap: 20px;
+      grid-row-gap: 20px;
+
+      & img {
+        width: 100%;
+      }
+    }
+  }
+
+  #contact {
+      width: 50%;
+      margin: auto;
+
+      & > * {
+        text-align: center;
+      }
+
+      & h2 {
+        margin-bottom: 20px;
+      }
+
+      & form {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        margin-top: 30px;
+
+        & input {
+          height: 50px;
+          font-size: 1.2em;
+          border: none;
+          box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+
+          &[type="submit"] {
+            font-family: "Syne";
+            font-weight: 700;
+            color: white;
+            background-color: #1d6154;
+            margin: 2em auto;
+            width: 180px;
+            text-align: center;
+            border-radius: 60px;
+          }
+        }
+
+        & label {
+          margin: 2em 0 1em 0;
+        }
+
+        & textarea {
+            border: none;
+            box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+        }
+      }
+  }
+}

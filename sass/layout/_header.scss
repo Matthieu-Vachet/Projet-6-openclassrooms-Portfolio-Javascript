@@ -1,0 +1,25 @@
+// -----------------------------------------------------------------------------
+// Ce fichier contient tous les styles liés à l'en-tête du site/de l'application.
+// -----------------------------------------------------------------------------
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 0;
+
+  & nav ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+
+    & li {
+      padding: 0 10px;
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    & li:hover {
+      color: #b1663c;
+    }
+  }
+}

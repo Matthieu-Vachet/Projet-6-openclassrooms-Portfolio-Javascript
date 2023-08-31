@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       // Construit l'URL de redirection avec un message encodé
       const message = "Connexion réussie ! Vous êtes connecté.";
-      const url = `/FrontEnd/index.html?message=${encodeURIComponent(message)}`;
+      const url = `/index.html?message=${encodeURIComponent(message)}`;
       // Redirige vers l'URL de redirection
       document.location = url;
     }
