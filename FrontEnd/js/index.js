@@ -8,14 +8,32 @@ const apiUrlWorks = "http://localhost:5678/api/works";
 const apiUrlCategories = "http://localhost:5678/api/categories";
 
 // Fonction asynchrone pour afficher les projets
-async function afficherProjets() {
-  // Effectuer une requête GET à l'API des projets
-  const reponseWorks = await fetch(apiUrlWorks);
-  // Obtenir la réponse sous forme de JSON
-  const works = await reponseWorks.json();
-  // Appeler la fonction genererWorks pour afficher les projets sur la page
-  genererWorks(works);
-}
+// export async function afficherProjets() {
+//   // Effectuer une requête GET à l'API des projets
+//   const reponseWorks = await fetch(apiUrlWorks);
+//   // Obtenir la réponse sous forme de JSON
+//   const works = await reponseWorks.json();
+//   // Appeler la fonction genererWorks pour afficher les projets sur la page
+//   console.log(works);
+//   genererWorks(works);
+
+//   return works;
+// }
+
+export const afficherProjets = async () => {
+  try {
+    const reponse = await fetch("http://localhost:5678/api/works");
+    const data = await reponse.json();
+
+    genererWorks(data);
+
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+export const works = await afficherProjets();
+
 
 // Fonction asynchrone pour afficher les catégories
 async function afficherCategories() {
@@ -24,6 +42,7 @@ async function afficherCategories() {
   // Obtenir la réponse sous forme de JSON
   const categories = await reponseCategories.json();
   // Appeler la fonction genererCategories pour afficher les catégories sur la page
+  console.log(categories);
   genererCategories(categories);
 }
 

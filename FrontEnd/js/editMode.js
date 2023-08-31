@@ -22,12 +22,12 @@ export function modeEditor() {
 
   if (worksTitle) {
     // Ajouter un bouton "modifier" à l'élément avec la classe "works-title"
-    worksTitle.innerHTML += `<a class="btn-edit edit-works"> <i class="fa-sharp fa-regular fa-pen-to-square"></i>modifier</a>`;
+    worksTitle.innerHTML += `<a class="btn-edit edit-works modify"> <i class="fa-sharp fa-regular fa-pen-to-square"></i>modifier</a>`;
   }
 
   if (intro) {
     // Ajouter un bouton "modifier" à l'élément avec l'id "introduction figure"
-    intro.innerHTML += `<a class="btn-edit edit-image"> <i class="fa-sharp fa-regular fa-pen-to-square"></i>modifier</a>`;
+    intro.innerHTML += `<a class="btn-edit edit-image modify"> <i class="fa-sharp fa-regular fa-pen-to-square"></i>modifier</a>`;
   }
 
   if (filter) {

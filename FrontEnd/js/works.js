@@ -1,3 +1,4 @@
+
 // Fonction pour générer les éléments HTML correspondant à chaque projet
 export function genererWorks(works) {
   // Parcourir les projets dans le tableau "works"
@@ -27,8 +28,32 @@ export function genererWorks(works) {
       worksElement.appendChild(imageElement);
       // Ajouter l'élément <figcaption> à l'élément <figure>
       worksElement.appendChild(nomElement);
+
     } else {
       console.log("L'élément parent avec la classe 'gallery' n'existe pas");
     }
   }
 }
+
+
+
+export const deleteWorksApi = async (idOfWorks) => {
+  try {
+    const token = localStorage.getItem("token");
+    if (token) {
+      const userOnLine = { token: token };
+      const response = await fetch("http://localhost:5678/api/works/" + idOfWorks, {
+        method: "DELETE",
+        headers: {
+          Authorization: "Bearer " + userOnLine.token,
+        },
+      });
+      return response;
+    }
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+
+
