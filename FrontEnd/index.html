@@ -12,10 +12,14 @@
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./css/style.css">
 	<link rel="stylesheet" href="./css/editMode.css">
+	<link rel="stylesheet" href="./css/modal.css">
 
 	<script src="https://kit.fontawesome.com/2ab0c45394.js" crossorigin="anonymous"></script>
 
+	<script type="module" src="js/api.js"></script>
 	<script type="module" src="js/index.js" defer></script>
+	<script type="module" src="js/editMode.js" defer></script>
+	<script type="module" src="js/modal.js" defer></script>
 	<script type="module" src="js/navLocation.js" defer></script>
 
 
@@ -33,42 +37,41 @@
 		</nav>
 	</header>
 
-	<aside class="modal1 modal-main">
+	<aside class="modal modal-main">
 		<div class="modal-wrapper">
 			<div class="close-btn"><i class="fa-solid fa-xmark"></i></div>
-			<h3>Gallerie photo</h3>
-			<div class="miniature-gallery"></div>
+			<h3>Galerie photo</h3>
+			<div class="miniatures-gallery"></div>
 			<div class="separator"></div>
 			<button>Ajouter une photo</button>
 			<p class="suppr">Supprimer la galerie</p>
 		</div>
 	</aside>
-
-	<aside class="modal1 modal-add">
+	<aside class="modal modal-add ">
 		<div class="modal-wrapper modal-wrapper-add">
 			<div class="close-btn"><i class="fa-solid fa-xmark"></i></div>
 			<h3>Ajout photo</h3>
-			<form class="add-form" name="add-form" method="POST" enctype="multipart/form-data">
+			<form class="add-form" name="add-form" enctype="multipart/form-data" method="post">
 				<div class="add-file-zone">
 					<i class="fa-regular fa-image"></i>
 					<label for="add-file">+ Ajouter photo</label>
-					<p>jpg, png : 4Mo max</p>
-					<input type="file" name="image" id="add-file" accept=".png, .jpeg, .jpg">
+					<p>jpg, png : 4mo max</p>
+					<input type="file" name="image" id="add-file" accept=".png, .jpeg, .jpg" />
 				</div>
 				<div class="add-file-text">
 					<label for="file-title">Titre</label>
-					<input type="text" name="title" id="file-title">
+					<input type="text" name="title" id="file-title" />
 				</div>
 
 				<div class="add-file-text">
-					<label for="file-category">Catégorie</label>
-					<select name="category" id="file-category">
+					<label for="file-categorie">Categorie</label>
+					<select name="category" id="file-categorie">
 						<option></option>
-						</select>
+					</select>
 				</div>
 				<div class="separator"></div>
 
-				<input type="submit" id="file-submit" value="Valider">
+				<input type="submit" id="file-submit" value="Valider" />
 			</form>
 		</div>
 	</aside>
