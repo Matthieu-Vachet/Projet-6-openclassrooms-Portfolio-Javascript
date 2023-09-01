@@ -651,7 +651,7 @@ i {
   cursor: pointer;
 }
 .login-section .login-btn:hover {
-  background-color: #0E2F28;
+  background-color: #0e2f28;
   color: #fff;
   transform: scale(1.1);
 }
