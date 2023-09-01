@@ -10,14 +10,25 @@ let emailInput = "";
 let passwordInput = "";
 let isLoggedIn = sessionStorage.getItem("userOnLine") !== null;
 
+/**
+ * Événement "input" sur le champ de saisie de l'email.
+ * @param {Event} e - L'événement "input".
+ */
 email.addEventListener("input", (e) => {
   emailInput = e.target.value;
 });
 
+/**
+ * Événement "input" sur le champ de saisie du mot de passe.
+ * @param {Event} e - L'événement "input".
+ */
 password.addEventListener("input", (e) => {
   passwordInput = e.target.value;
 });
 
+/**
+ * Vérifie la présence du token dans le session storage.
+ */
 const checkTokenPresence = () => {
   const userOnLine = sessionStorage.getItem("userOnLine");
   if (userOnLine) {
@@ -27,6 +38,10 @@ const checkTokenPresence = () => {
   }
 };
 
+/**
+ * Gestionnaire de connexion.
+ * @param {Event} e - L'événement "click" sur le bouton de connexion.
+ */
 const loginHandler = async (e) => {
   e.preventDefault();
   let user = {
@@ -55,8 +70,10 @@ const loginHandler = async (e) => {
   }
 };
 
+// Événement "click" sur le bouton de connexion
 loginBtn.addEventListener("click", loginHandler);
 
+// Événement "click" sur le bouton de connexion/déconnexion
 login.addEventListener("click", () => {
   if (isLoggedIn) {
     sessionStorage.removeItem("userOnLine");
@@ -66,6 +83,9 @@ login.addEventListener("click", () => {
   }
 });
 
+/**
+ * Met à jour l'état du bouton de connexion.
+ */
 const updateLoginButton = () => {
   if (isLoggedIn) {
     login.textContent = "Logout";
@@ -76,4 +96,5 @@ const updateLoginButton = () => {
   checkTokenPresence();
 };
 
+// Appel initial pour mettre à jour le bouton de connexion
 updateLoginButton();

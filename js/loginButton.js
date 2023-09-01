@@ -1,3 +1,6 @@
+/**
+ * Met à jour l'état du bouton de connexion.
+ */
 export const updateLoginButton = () => {
   const login = document.getElementById("login");
   const isLoggedIn = sessionStorage.getItem("userOnLine") !== null;
@@ -11,6 +14,9 @@ export const updateLoginButton = () => {
   checkTokenPresence();
 };
 
+/**
+ * Vérifie la présence du token dans le session storage.
+ */
 const checkTokenPresence = () => {
   const userOnLine = sessionStorage.getItem("userOnLine");
   if (userOnLine) {
