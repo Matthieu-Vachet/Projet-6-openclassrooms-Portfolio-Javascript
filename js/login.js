@@ -1,100 +1,48 @@
-import { getTokenWrapper } from "/js/apiWraper.js";
+// import { getTokenFromApi } from "./api.js"
 
-const email = document.getElementById("email");
-const password = document.getElementById("password");
-const loginBtn = document.querySelector(".login-btn");
-const loginError = document.querySelector(".login-error");
-const login = document.getElementById("login");
+import { getTokenFromApi } from "./api.js"
 
-let emailInput = "";
-let passwordInput = "";
-let isLoggedIn = sessionStorage.getItem("userOnLine") !== null;
+const email = document.getElementById("email")
+const password = document.getElementById("password")
+const submitBtn = document.querySelector(".login-btn")
 
-/**
- * Événement "input" sur le champ de saisie de l'email.
- * @param {Event} e - L'événement "input".
- */
+const loginError = document.querySelector(".login-error")
+
+let emailInput = ""
+let passwordInput = ""
+
+// Fonction togglePasswordVisibility
+function togglePasswordVisibility() {
+    const passwordInput = document.getElementById("password")
+    if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+    } else {
+        passwordInput.type = "password";
+    }
+}
+
 email.addEventListener("input", (e) => {
-  emailInput = e.target.value;
-});
+    emailInput = e.target.value
+})
 
-/**
- * Événement "input" sur le champ de saisie du mot de passe.
- * @param {Event} e - L'événement "input".
- */
 password.addEventListener("input", (e) => {
-  passwordInput = e.target.value;
-});
+    passwordInput = e.target.value
+})
 
-/**
- * Vérifie la présence du token dans le session storage.
- */
-const checkTokenPresence = () => {
-  const userOnLine = sessionStorage.getItem("userOnLine");
-  if (userOnLine) {
-    console.log("Le token est présent : ", userOnLine);
-  } else {
-    console.log("Le token n'est pas présent.");
-  }
-};
+submitBtn.addEventListener("click",  async (e) => {
+    e.preventDefault()
+    let user = { "email": emailInput, "password": passwordInput };
 
-/**
- * Gestionnaire de connexion.
- * @param {Event} e - L'événement "click" sur le bouton de connexion.
- */
-const loginHandler = async (e) => {
-  e.preventDefault();
-  let user = {
-    email: emailInput,
-    password: passwordInput,
-  };
+    const responseForLogin = await getTokenFromApi(user)
+    if (!responseForLogin.ok || !emailInput || !passwordInput) {
+        loginError.innerHTML = "Veuillez entrer un email et un mot de passe valide";
 
-  const response = await getTokenWrapper(user);
-  if (!response.ok || !emailInput || !passwordInput) {
-    loginError.innerHTML = "Veuillez entrer un email et un mot de passe valide";
-  } else {
-    let userOnLine = await response.json();
+    } else {
 
-    sessionStorage.setItem("userOnLine", JSON.stringify(userOnLine));
-    isLoggedIn = true;
-    updateLoginButton();
-  }
+    let userOnline = await responseForLogin.json()
+  
+    sessionStorage.setItem("userOnline" , JSON.stringify(userOnline))
+    window.location.href="/index.html";
 
-  if (isLoggedIn) {
-    login.textContent = "Logout";
-    window.location.href = "/index.html";
-    checkTokenPresence();
-  } else {
-    login.textContent = "Login";
-    checkTokenPresence();
-  }
-};
-
-// Événement "click" sur le bouton de connexion
-loginBtn.addEventListener("click", loginHandler);
-
-// Événement "click" sur le bouton de connexion/déconnexion
-login.addEventListener("click", () => {
-  if (isLoggedIn) {
-    sessionStorage.removeItem("userOnLine");
-    isLoggedIn = false;
-    updateLoginButton();
-    checkTokenPresence();
-  }
-});
-
-/**
- * Met à jour l'état du bouton de connexion.
- */
-const updateLoginButton = () => {
-  if (isLoggedIn) {
-    login.textContent = "Logout";
-  } else {
-    login.textContent = "Login";
-  }
-
-  checkTokenPresence();
-};
-
-// Appel initial pour mettre à jour le bouton de connexion
-updateLoginButton();
+    }
+})
