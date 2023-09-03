@@ -38,11 +38,24 @@
 
     & button {
       color: white;
+      width: 237px;
+      height: 36px;
       background-color: #1d6154;
+      font-family: "Syne";
+      font-weight: 700;
+      font-size: 14px;
+      border: none;
+      border-radius: 60px;
       cursor: pointer;
+      transition: scale 0.4s ease;
+
+      &:hover {
+        scale: 1.1;
+      }
     }
 
     & .suppr {
+      padding-top: 23px;
       color: red;
     }
   }

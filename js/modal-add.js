@@ -1,4 +1,4 @@
-import { postToApi, categories, getWorksFromApi } from "./api.js";
+import { postApi, categories, worksWrapper } from "./api.js";
 import { generateGallery } from "./index.js";
 import { generateMiniGallery, trash, trashListener } from "./modal.js";
 
@@ -81,7 +81,7 @@ form.addEventListener("submit", async (e) => {
     const userOnline = JSON.parse(sessionStorage.getItem("userOnline"));
     const formData = new FormData(form);
 
-    await postToApi(formData, userOnline);
+    await postApi(formData, userOnline);
 
     
  
@@ -94,7 +94,7 @@ form.addEventListener("submit", async (e) => {
    
     displayImage("");
 
-    const newWorks = await getWorksFromApi();
+    const newWorks = await worksWrapper();
     
     generateGallery(newWorks);
     generateMiniGallery(newWorks);

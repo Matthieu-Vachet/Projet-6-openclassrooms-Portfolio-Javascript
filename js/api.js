@@ -1,4 +1,4 @@
-export const getWorksFromApi = async () => {
+export const worksWrapper = async () => {
   try {
     const reponse = await fetch("http://localhost:5678/api/works");
     const data = await reponse.json();
@@ -9,7 +9,7 @@ export const getWorksFromApi = async () => {
   }
 };
 
-const getCategoriesFromApi = async () => {
+const categorieWrapper = async () => {
   try {
     const reponse = await fetch("http://localhost:5678/api/categories");
     const data = await reponse.json();
@@ -20,10 +20,10 @@ const getCategoriesFromApi = async () => {
   }
 };
 
-export const works = await getWorksFromApi();
-export const categories = await getCategoriesFromApi();
+export const works = await worksWrapper();
+export const categories = await categorieWrapper();
 
-export const getTokenFromApi = async (user) => {
+export const tokenWrapper = async (user) => {
   try {
     const reponse = await fetch("http://localhost:5678/api/users/login", {
       method: "POST",
@@ -39,7 +39,7 @@ export const getTokenFromApi = async (user) => {
   }
 };
 
-export const postToApi = async (files, userOnline) => {
+export const postApi = async (files, userOnline) => {
   try {
     const reponse = await fetch("http://localhost:5678/api/works", {
       method: "POST",
@@ -55,7 +55,7 @@ export const postToApi = async (files, userOnline) => {
   }
 };
 
-export const deleteToApi = async (idOfWorks, userOnline) => {
+export const deleteApi = async (idOfWorks, userOnline) => {
   try {
     const reponse = await fetch(
       "http://localhost:5678/api/works/" + idOfWorks,

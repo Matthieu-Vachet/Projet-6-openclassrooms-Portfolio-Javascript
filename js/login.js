@@ -1,6 +1,5 @@
-// import { getTokenFromApi } from "./api.js"
 
-import { getTokenFromApi } from "./api.js"
+import { tokenWrapper } from "./api.js"
 
 const email = document.getElementById("email")
 const password = document.getElementById("password")
@@ -26,7 +25,7 @@ submitBtn.addEventListener("click",  async (e) => {
     e.preventDefault()
     let user = { "email": emailInput, "password": passwordInput };
 
-    const responseForLogin = await getTokenFromApi(user)
+    const responseForLogin = await tokenWrapper(user)
     if (!responseForLogin.ok || !emailInput || !passwordInput) {
         loginError.innerHTML = "Veuillez entrer un email et un mot de passe valide";
 

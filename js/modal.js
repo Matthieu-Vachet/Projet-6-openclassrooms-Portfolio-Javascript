@@ -1,4 +1,4 @@
-import { deleteToApi, getWorksFromApi, works } from "./api.js";
+import { deleteApi, worksWrapper, works } from "./api.js";
 import { generateGallery } from "./index.js";
 const closeModal = document.querySelectorAll(".close-btn");
 const modalMain = document.querySelector(".modal-main");
@@ -63,9 +63,9 @@ export const trashListener = (element, index) => {
       return;
     }
     const userOnline = JSON.parse(sessionStorage.getItem("userOnline"));
-    let newWorks = await getWorksFromApi();
-    await deleteToApi(newWorks[index].id, userOnline);
-    newWorks = await getWorksFromApi();
+    let newWorks = await worksWrapper();
+    await deleteApi(newWorks[index].id, userOnline);
+    newWorks = await worksWrapper();
 
     generateGallery(newWorks);
     generateMiniGallery(newWorks);
