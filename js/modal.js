@@ -71,10 +71,6 @@ export const trashListener = (element, index) => {
     generateGallery(newWorks);
     generateMiniGallery(newWorks);
    
-
-    // for (let i = 0; i < trash.length; i++) {
-    //   trashListener(trash[i], i);
-    // }
   });
 };
 
@@ -133,6 +129,3 @@ modalAdd.addEventListener("click", (e) => {
 
 generateMiniGallery(works);
 
-// for (let i = 0; i < trash.length; i++) {
-//   trashListener(trash[i], i);
-// }
