@@ -6,20 +6,13 @@ const email = document.getElementById("email")
 const password = document.getElementById("password")
 const submitBtn = document.querySelector(".login-btn")
 
+
 const loginError = document.querySelector(".login-error")
 
 let emailInput = ""
 let passwordInput = ""
 
-// Fonction togglePasswordVisibility
-function togglePasswordVisibility() {
-    const passwordInput = document.getElementById("password")
-    if (passwordInput.type === "password") {
-        passwordInput.type = "text";
-    } else {
-        passwordInput.type = "password";
-    }
-}
+
 
 email.addEventListener("input", (e) => {
     emailInput = e.target.value
