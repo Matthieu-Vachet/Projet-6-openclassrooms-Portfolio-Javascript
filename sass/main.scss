@@ -10,7 +10,7 @@
 @import "./layout/header", "./layout/main","./layout/footer", "./layout/mode-edition";
 
 // 5. Composants
-@import "./components/button", "./components/modal-main", "./components/modal-add";
+@import "./components/button", "./components/modal-main", "./components/modal-add", "./components/modal-message";
 
 // 6. Styles spécifiques à la page
 @import "./pages/login";

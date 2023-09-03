@@ -1,5 +1,6 @@
 import { deleteApi, worksWrapper, works } from "./api.js";
 import { generateGallery } from "./index.js";
+import { showModal } from "./modal-message.js";
 const closeModal = document.querySelectorAll(".fa-xmark");
 const returnModal = document.querySelectorAll(".fa-arrow-left");
 const modalMain = document.querySelector(".modal-main");
@@ -55,14 +56,20 @@ export const generateMiniGallery = (elements) => {
 
 // Fonction Suppression de photos
 
+
 export const trashListener = (element, index) => {
   element.addEventListener("click", async () => {
-    const confirmDelete = confirm(
-      "Etes vous sûr de vouloir supprimer cette photo ?"
-    );
+    // Afficher votre modal de confirmation en utilisant votre fonction showModal
+    showModal("Êtes-vous sûr de vouloir supprimer cette photo ?");
+
+    // Attendre la réponse de l'utilisateur
+    const confirmDelete = await getUserConfirmation();
+
+    // Vérifier si l'utilisateur a confirmé la suppression
     if (!confirmDelete) {
       return;
     }
+
     const userOnline = JSON.parse(sessionStorage.getItem("userOnline"));
     let newWorks = await worksWrapper();
     await deleteApi(newWorks[index].id, userOnline);
@@ -70,9 +77,41 @@ export const trashListener = (element, index) => {
 
     generateGallery(newWorks);
     generateMiniGallery(newWorks);
-   
   });
 };
+
+const getUserConfirmation = () => {
+  return new Promise((resolve) => {
+    const confirmButton = document.getElementById("confirm-delete");
+    const cancelButton = document.getElementById("cancel-delete");
+
+    confirmButton.addEventListener("click", () => {
+      resolve(true); // L'utilisateur a confirmé la suppression
+    });
+
+    cancelButton.addEventListener("click", () => {
+      resolve(false); // L'utilisateur a annulé la suppression
+    });
+  });
+};
+// export const trashListener = (element, index) => {
+//   element.addEventListener("click", async () => {
+//     const confirmDelete = confirm(
+//       "Etes vous sûr de vouloir supprimer cette photo ?"
+//     );
+//     if (!confirmDelete) {
+//       return;
+//     }
+//     const userOnline = JSON.parse(sessionStorage.getItem("userOnline"));
+//     let newWorks = await worksWrapper();
+//     await deleteApi(newWorks[index].id, userOnline);
+//     newWorks = await worksWrapper();
+
+//     generateGallery(newWorks);
+//     generateMiniGallery(newWorks);
+   
+//   });
+// };
 
 
 
