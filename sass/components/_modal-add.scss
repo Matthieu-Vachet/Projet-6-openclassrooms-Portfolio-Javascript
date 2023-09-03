@@ -16,10 +16,28 @@
     height: 730px;
     border-radius: 10px;
 
-    & .close-btn {
+    & .close-btn  {
       text-align: right;
       margin: 20px;
-      cursor: pointer;
+
+      & .fa-arrow-left {
+        margin-right: 92%;
+        cursor: pointer;
+        transition: transform 0.4s ease;
+
+        &:hover {
+          transform: scale(1.5);
+        }
+      }
+
+      & .fa-xmark {
+        cursor: pointer;
+        transition: transform 0.4s ease;
+
+        &:hover {
+          transform: scale(1.5);
+        }
+      }
     }
 
     & h3 {

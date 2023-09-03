@@ -1,6 +1,7 @@
 import { deleteApi, worksWrapper, works } from "./api.js";
 import { generateGallery } from "./index.js";
-const closeModal = document.querySelectorAll(".close-btn");
+const closeModal = document.querySelectorAll(".fa-xmark");
+const returnModal = document.querySelectorAll(".fa-arrow-left");
 const modalMain = document.querySelector(".modal-main");
 const modalAdd = document.querySelector(".modal-add");
 const miniGallery = document.querySelector(".miniatures-gallery");
@@ -88,6 +89,14 @@ Array.from(closeModal).forEach((element) => {
     modalIsOpen = false;
   });
 });
+
+Array.from(returnModal).forEach((element) => {
+  element.addEventListener("click", () => {
+    modalMain.style.display = "flex";
+    modalAdd.style.display = "none";
+    modalIsOpen = true;
+  });
+})
 
 addBtn.addEventListener("click", () => {
   modalMain.style.display = "none";
