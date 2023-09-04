@@ -60,6 +60,12 @@
         height: 169px;
         background-color: $form-color;
 
+        & .uploaded-image {
+          width: auto;
+          height: 169px;
+          margin: 0;
+        }
+
         & i {
           width: 58px;
           height: 58px;
@@ -74,16 +80,16 @@
         }
 
         & label {
-          @include fontWorkSans500(14px, $label-color);
+          @include fontWorkSans500(16px, $label-color);
           margin: 5px;
         }
 
         & label[for="add-file"] {
           width: 173px;
           height: 36px;
-          background-color: $form-color;
+          background-color: #cbd6dc;
           border-radius: 50px;
-          padding: 10px 33px;
+          padding: 10px 0;
           cursor: pointer;
         }
 

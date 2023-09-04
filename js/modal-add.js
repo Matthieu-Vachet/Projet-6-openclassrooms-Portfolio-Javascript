@@ -34,8 +34,11 @@ const displayImage = (url) => {
 
     imageElement = document.createElement("img");
     imageElement.src = url;
+    imageElement.classList.add("uploaded-image");
 
     fileZone.querySelector("i").style.display = "none";
+    fileZone.querySelector("label").style.display = "none";
+    fileZone.querySelector("p").style.display = "none";
     fileZone.prepend(imageElement);
     previewIspresent = true;
 };
@@ -74,43 +77,43 @@ categorieInput.addEventListener("input", (e) => {
  * @param {Event} e - L'événement de soumission.
  */
 form.addEventListener("submit", async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  if (!imageTitle | !imageCategorie | !imageElement) {
-      const error = document.querySelector(".errorChamp");
-      error.innerText = "Veuillez remplir tous les champs";
-      error.classList.add("errorchamp");
-      return;
-  }
+    if (!imageTitle | !imageCategorie | !imageElement) {
+        const error = document.querySelector(".errorChamp");
+        error.innerText = "Veuillez remplir tous les champs";
+        error.classList.add("errorchamp");
+        return;
+    }
 
-  if (file.size > 4194304) {
-      const error = document.querySelector(".errorChamp");
-      error.innerText = "Fichier trop volumineux";
-      error.classList.add("errorChamp");
-      return;
-  } else {
-      const userOnline = JSON.parse(sessionStorage.getItem("userOnline"));
-      const formData = new FormData(form);
+    if (file.size > 4194304) {
+        const error = document.querySelector(".errorChamp");
+        error.innerText = "Fichier trop volumineux";
+        error.classList.add("errorChamp");
+        return;
+    } else {
+        const userOnline = JSON.parse(sessionStorage.getItem("userOnline"));
+        const formData = new FormData(form);
 
-      await postApi(formData, userOnline);
+        await postApi(formData, userOnline);
 
-      showModalConfirm("Votre travail a bien été ajouté");
+        showModalConfirm("Votre travail a bien été ajouté");
 
-      form.reset();
+        form.reset();
 
-      imageElement = "";
-      imageTitle = "";
-      imageCategorie = "";
+        imageElement = "";
+        imageTitle = "";
+        imageCategorie = "";
 
-      displayImage("");
+        displayImage("");
 
-      const newWorks = await worksWrapper();
+        const newWorks = await worksWrapper();
 
-      generateGallery(newWorks);
-      generateMiniGallery(newWorks);
+        generateGallery(newWorks);
+        generateMiniGallery(newWorks);
 
-      console.log(newWorks);
-  }
+        console.log(newWorks);
+    }
 
-  return false;
+    return false;
 });
