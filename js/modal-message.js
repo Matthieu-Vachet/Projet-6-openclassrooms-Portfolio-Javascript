@@ -1,3 +1,11 @@
+  /**
+   * Ferme la modal de confirmation.
+   */
+const closeModal = () => {
+  // Suppression de la modal du document
+  document.body.removeChild(aside);
+};
+
 /**
  * Affiche une modal de confirmation de suppression avec un message donné.
  * @param {string} message - Le message à afficher dans la modal.
@@ -49,14 +57,6 @@ export const showModalSuppr = (message) => {
   cancelButton.addEventListener("click", () => {
       closeModal();
   });
-
-  /**
-   * Ferme la modal de confirmation.
-   */
-  const closeModal = () => {
-      // Suppression de la modal du document
-      document.body.removeChild(aside);
-  };
 };
 
 /**
