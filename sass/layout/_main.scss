@@ -1,7 +1,6 @@
 main {
   #introduction {
-    display: flex;
-    align-items: center;
+    @include flex-center;
 
     & figure {
       flex: 1;
@@ -38,24 +37,21 @@ main {
 
       & button {
         height: 37px;
-        font-family: "Syne";
-        font-weight: 700;
-        font-size: 16px;
+        @include fontSyne700(16px, $main-color);
         line-height: normal;
         justify-content: center;
         text-align: center;
         padding: 9px 10px;
         border-radius: 60px;
-        border: 1px solid #1d6154;
-        color: #1d6154;
+        border: 1px solid $main-color;
         cursor: pointer;
-        background-color: white;
+        background-color: $white;
         transition: all 0.4s ease;
       }
 
       & button:hover {
-        background-color: #1d6154;
-        color: white;
+        background-color: $main-color;
+        color: $white;
         transform: scale(1.1);
       }
     }
@@ -86,22 +82,18 @@ main {
       }
 
       & form {
-        display: flex;
-        flex-direction: column;
-        text-align: left;
+        @include flex-left-column;
         margin-top: 30px;
 
         & input {
           height: 50px;
           font-size: 1.2em;
           border: none;
-          box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+          box-shadow: $shadow;
 
           &[type="submit"] {
-            font-family: "Syne";
-            font-weight: 700;
-            color: white;
-            background-color: #1d6154;
+            @include fontSyne700(16px, $white);
+            background-color: $main-color;
             margin: 2em auto;
             width: 180px;
             text-align: center;
@@ -115,7 +107,7 @@ main {
 
         & textarea {
             border: none;
-            box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+            box-shadow: $shadow;
         }
       }
   }

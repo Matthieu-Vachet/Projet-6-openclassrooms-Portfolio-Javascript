@@ -3,54 +3,25 @@
 // -----------------------------------------------------------------------------
 
 
-/// Famille de polices régulières
-/// @type List
-/// $text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+// VARIABLES COLORS //
 
-/// Famille de polices Code (monospace)
-/// @type List
-/// $code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
+$main-color: #1d6154;
+$main-hover: #0e2f28;
+$hover-color: #b1663c;
 
+$form-color: #e8f1f6;
+$label-color: #306685;
+$separator-color: #b3b3b3;
 
-/// Copy text color
-/// @type Color
-/// $text-color: rgb(34, 34, 34) !default;
+$black: #000;
+$white: #fff;
+$red: red;
 
-/// Main brand color
-/// @type Color
-/// $brand-color: rgb(229, 0, 80) !default;
-
-/// Light grey
-/// @type Color
-/// $light-grey: rgb(237, 237, 237) !default;
-
-/// Medium grey
-/// @type Color
-/// $mid-grey: rgb(153, 153, 153) !default;
-
-/// Dark grey
-/// @type Color
-/// $dark-grey: rgb(68, 68, 68) !default;
+// BACKGROUND COLORS //
+$input-bg: #A7A7A7;
+$modal-bg: rgba(0, 0, 0, 0.6);
 
 
-/// Container's maximum width
-/// @type Length
-/// $max-width: 1180px !default;
-
-
-/// Breakpoints map
-/// @prop {String} keys - Keys are identifiers mapped to a given length
-/// @prop {Map} values - Values are actual breakpoints expressed in pixels
-/// 
-/// $breakpoints: (
-///  'small': 320px,
-///  'medium': 768px,
-///  'large': 1024px,
-/// ) !default;
-
-
-/// Relative or absolute URL where all assets are served from
-/// @type String
-/// @example scss - When using a CDN
-///   $base-url: 'https://cdn.example.com/assets/';
-/// $base-url: '/assets/' !default;
+// BOX SHADOWS //
+$shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+$shadow-modal: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);

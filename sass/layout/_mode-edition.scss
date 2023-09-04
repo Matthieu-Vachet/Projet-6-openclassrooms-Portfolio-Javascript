@@ -2,27 +2,16 @@
   width: 100%;
   height: 50px;
   margin: 0;
-  background-color: black;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  color: white;
+  background-color: $black;
+  @include flex-row-center-center;
+  @include fontWorkSans500(16px, $white);
   gap: 15px;
-  font-family: "work sans";
-  font-weight: 500;
-  font-size: 16px;
 }
 
 .btn-edition {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background: black;
-  color: white;
-  font-family: "work sans";
-  font-weight: 500;
-  font-size: 14px;
+  @include flex-row-center;
+  background: $black;
+  @include fontWorkSans500(14px, $white);
   border: none;
   cursor: pointer;
 }
@@ -36,25 +25,18 @@ i {
   width: 210px;
   height: 35px;
   text-align: center;
-  background-color: white;
+  background-color: $white;
   border: none;
   border-radius: 60px;
-  font-family: "work sans";
-  font-weight: 500;
-  font-size: 14px;
+  @include fontWorkSans500(14px, $black);
   line-height: 16px;
   cursor: pointer;
 }
 
 .btn-edit {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background: white;
-  color: black;
-  font-family: "work sans";
-  font-weight: 500;
-  font-size: 14px;
+  @include flex-row-center;
+  background: $white;
+  @include fontWorkSans500(14px, $black);
   border: none;
   cursor: pointer;
 }
@@ -65,9 +47,6 @@ i {
 }
 
 .works-title {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  @include flex-row-center-center;
   gap: 15px;
 }

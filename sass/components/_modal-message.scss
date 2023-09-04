@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   position: fixed;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: $modal-bg;
   top: 0;
   left: 0;
   width: 100%;
@@ -11,28 +11,21 @@
 
   & .modal-content {
     text-align: center;
-    background-color: white;
+    background-color: $white;
     width: auto;
     height: auto;
     border-radius: 20px;
     padding: 10px;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    box-shadow: $shadow-modal;
 
     & h1 {
-      color: #1d6154;
+      @include fontSyne700(30px, $main-color);
       text-align: center;
-      font-family: Syne;
-      font-size: 30px;
-      font-weight: 700;
       margin-bottom: 20px;
     }
 
     & p {
-        color: #3D3D3D;
-        font-family: Work Sans;
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 600;
+      @include fontWorkSans600(18px, #3D3D3D);
         line-height: normal;
       margin-bottom: 20px;
     }
@@ -43,18 +36,15 @@
       width: 200px;
       border-radius: 60px;
       border: none;
-      background: #1d6154;
-      color: #fff;
+      background: $main-color;
+      @include fontSyne500(14px, $white);
       text-align: center;
-      font-family: Syne;
-      font-size: 14px;
-      font-weight: 500;
       margin: 5px 10px;
       cursor: pointer;
       transition: all 0.5s ease;
 
       &:hover {
-        background-color: #0e2f28;
+        background-color: $main-hover;
         scale: 1.03;
 
       }

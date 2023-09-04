@@ -5,8 +5,7 @@
 footer {
   & nav {
     & ul {
-      display: flex;
-      justify-content: flex-end;
+      @include flex-end;
       margin: 2em;
     }
   }

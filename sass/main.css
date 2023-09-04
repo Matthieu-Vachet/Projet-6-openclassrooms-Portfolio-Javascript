@@ -2,6 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap");
 html,
 body,
 div,
@@ -163,10 +164,11 @@ section {
 h1 {
   display: flex;
   flex-direction: column;
-  font-family: "Syne";
   font-size: 22px;
-  font-weight: 800;
   color: #b1663c;
+  font-weight: 800;
+  font-style: normal;
+  font-family: "Syne";
 }
 
 h1 > span {
@@ -176,14 +178,15 @@ h1 > span {
 }
 
 h2 {
-  font-family: "Syne";
-  font-weight: 700;
   font-size: 30px;
   color: #1d6154;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Syne";
 }
 
 .active {
-  color: black;
+  color: #000;
   font-size: 19px;
   font-weight: 700;
 }
@@ -243,23 +246,24 @@ main #portfolio .button-filtre {
 }
 main #portfolio .button-filtre button {
   height: 37px;
-  font-family: "Syne";
-  font-weight: 700;
   font-size: 16px;
+  color: #1d6154;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Syne";
   line-height: normal;
   justify-content: center;
   text-align: center;
   padding: 9px 10px;
   border-radius: 60px;
   border: 1px solid #1d6154;
-  color: #1d6154;
   cursor: pointer;
-  background-color: white;
+  background-color: #fff;
   transition: all 0.4s ease;
 }
 main #portfolio .button-filtre button:hover {
   background-color: #1d6154;
-  color: white;
+  color: #fff;
   transform: scale(1.1);
 }
 main #portfolio .gallery {
@@ -285,7 +289,7 @@ main #contact h2 {
 main #contact form {
   display: flex;
   flex-direction: column;
-  text-align: left;
+  align-items: left;
   margin-top: 30px;
 }
 main #contact form input {
@@ -295,9 +299,11 @@ main #contact form input {
   box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 main #contact form input[type=submit] {
-  font-family: "Syne";
+  font-size: 16px;
+  color: #fff;
   font-weight: 700;
-  color: white;
+  font-style: normal;
+  font-family: "Syne";
   background-color: #1d6154;
   margin: 2em auto;
   width: 180px;
@@ -322,27 +328,29 @@ footer nav ul {
   width: 100%;
   height: 50px;
   margin: 0;
-  background-color: black;
+  background-color: #000;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  color: white;
-  gap: 15px;
-  font-family: "work sans";
-  font-weight: 500;
   font-size: 16px;
+  color: #fff;
+  font-weight: 500;
+  font-style: normal;
+  font-family: "Work Sans";
+  gap: 15px;
 }
 
 .btn-edition {
   display: flex;
   flex-direction: row;
   align-items: center;
-  background: black;
-  color: white;
-  font-family: "work sans";
-  font-weight: 500;
+  background: #000;
   font-size: 14px;
+  color: #fff;
+  font-weight: 500;
+  font-style: normal;
+  font-family: "Work Sans";
   border: none;
   cursor: pointer;
 }
@@ -356,12 +364,14 @@ i {
   width: 210px;
   height: 35px;
   text-align: center;
-  background-color: white;
+  background-color: #fff;
   border: none;
   border-radius: 60px;
-  font-family: "work sans";
-  font-weight: 500;
   font-size: 14px;
+  color: #000;
+  font-weight: 500;
+  font-style: normal;
+  font-family: "Work Sans";
   line-height: 16px;
   cursor: pointer;
 }
@@ -370,11 +380,12 @@ i {
   display: flex;
   flex-direction: row;
   align-items: center;
-  background: white;
-  color: black;
-  font-family: "work sans";
-  font-weight: 500;
+  background: #fff;
   font-size: 14px;
+  color: #000;
+  font-weight: 500;
+  font-style: normal;
+  font-family: "Work Sans";
   border: none;
   cursor: pointer;
 }
@@ -405,7 +416,7 @@ i {
 }
 .modal .modal-wrapper {
   text-align: center;
-  background-color: white;
+  background-color: #fff;
   width: 630px;
   height: 730px;
   border-radius: 10px;
@@ -434,13 +445,14 @@ i {
   margin-bottom: 60px;
 }
 .modal .modal-wrapper button {
-  color: white;
   width: 237px;
   height: 36px;
   background-color: #1d6154;
-  font-family: "Syne";
-  font-weight: 700;
   font-size: 14px;
+  color: #fff;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Syne";
   border: none;
   border-radius: 60px;
   cursor: pointer;
@@ -480,8 +492,8 @@ i {
 }
 
 .icons i {
-  color: white;
-  background-color: black;
+  color: #fff;
+  background-color: #000;
   padding: 5px;
   font-size: 9px;
   border-radius: 2px;
@@ -515,7 +527,7 @@ i {
 }
 .modal .modal-wrapper {
   text-align: center;
-  background-color: white;
+  background-color: #fff;
   width: 630px;
   height: 730px;
   border-radius: 10px;
@@ -552,8 +564,8 @@ i {
 }
 .modal .modal-wrapper .add-form .add-file-zone {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
   height: 169px;
   background-color: #e8f1f6;
 }
@@ -569,15 +581,17 @@ i {
   margin: 5px;
 }
 .modal .modal-wrapper .add-form .add-file-zone label {
+  font-size: 14px;
   color: #306685;
   font-weight: 500;
-  font-size: 14px;
+  font-style: normal;
+  font-family: "Work Sans";
   margin: 5px;
 }
 .modal .modal-wrapper .add-form .add-file-zone label[for=add-file] {
   width: 173px;
   height: 36px;
-  background-color: #cbd6dc;
+  background-color: #e8f1f6;
   border-radius: 50px;
   padding: 10px 33px;
   cursor: pointer;
@@ -605,10 +619,11 @@ i {
 .modal .modal-wrapper .add-form input[type=submit] {
   padding: 10px 49px;
   background: #A7A7A7;
-  color: white;
-  font-family: "Syne";
-  font-weight: 700;
   font-size: 14px;
+  color: #fff;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Syne";
   margin: 0 auto;
   width: 237px;
   height: 36px;
@@ -626,7 +641,7 @@ i {
 .modal .modal-wrapper .add-form .add-file-text {
   display: flex;
   flex-direction: column;
-  text-align: left;
+  align-items: left;
 }
 
 #confirmation-modal {
@@ -642,7 +657,7 @@ i {
 }
 #confirmation-modal .modal-content {
   text-align: center;
-  background-color: white;
+  background-color: #fff;
   width: auto;
   height: auto;
   border-radius: 20px;
@@ -650,19 +665,20 @@ i {
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 #confirmation-modal .modal-content h1 {
-  color: #1d6154;
-  text-align: center;
-  font-family: Syne;
   font-size: 30px;
+  color: #1d6154;
   font-weight: 700;
+  font-style: normal;
+  font-family: "Syne";
+  text-align: center;
   margin-bottom: 20px;
 }
 #confirmation-modal .modal-content p {
-  color: #3D3D3D;
-  font-family: Work Sans;
   font-size: 18px;
-  font-style: normal;
+  color: #3D3D3D;
   font-weight: 600;
+  font-style: normal;
+  font-family: "Work Sans";
   line-height: normal;
   margin-bottom: 20px;
 }
@@ -672,11 +688,12 @@ i {
   border-radius: 60px;
   border: none;
   background: #1d6154;
-  color: #fff;
-  text-align: center;
-  font-family: Syne;
   font-size: 14px;
+  color: #fff;
   font-weight: 500;
+  font-style: normal;
+  font-family: "Syne";
+  text-align: center;
   margin: 5px 10px;
   cursor: pointer;
   transition: all 0.5s ease;
@@ -693,10 +710,11 @@ i {
   flex-direction: column;
 }
 .login-section h1 {
-  font-family: "Syne";
+  font-size: 38px;
   color: #1d6154;
   font-weight: 700;
-  font-size: 38px;
+  font-style: normal;
+  font-family: "Syne";
   margin-top: 150px;
 }
 .login-section .login-form {
@@ -704,10 +722,11 @@ i {
   flex-direction: column;
 }
 .login-section .login-form label {
-  font-family: work sans;
   font-size: 14px;
   color: #3d3d3d;
   font-weight: 500;
+  font-style: normal;
+  font-family: "Work Sans";
   margin-bottom: 7px;
   margin-top: 35px;
 }
@@ -718,11 +737,11 @@ i {
   color: #1d6154;
   background: #fff;
   border: none;
-  box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.09);
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 .login-section .login-form input:focus {
   outline: 1px solid #1d6154;
-  box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.09);
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 .login-section .login-form .password-container {
   position: relative;
@@ -754,11 +773,12 @@ i {
   background: #1d6154;
   border: none;
   border-radius: 60px;
-  box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.09);
-  color: #fff;
-  font-family: "Syne";
-  font-weight: 700;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
   font-size: 14px;
+  color: #fff;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Syne";
   margin-top: 27px;
   cursor: pointer;
 }
@@ -768,10 +788,11 @@ i {
   transform: scale(1.1);
 }
 .login-section .forgot-password {
-  font-family: work sans;
   font-size: 14px;
   color: #3d3d3d;
   font-weight: 500;
+  font-style: normal;
+  font-family: "Work Sans";
   margin-top: 26px;
   padding-bottom: 355px;
   text-decoration-line: underline;

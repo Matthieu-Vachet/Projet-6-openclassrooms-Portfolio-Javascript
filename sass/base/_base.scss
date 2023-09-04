@@ -25,12 +25,8 @@ section {
 }
 
 h1 {
-  display: flex;
-  flex-direction: column;
-  font-family: "Syne";
-  font-size: 22px;
-  font-weight: 800;
-  color: #b1663c;
+  @include flex-column;
+  @include fontSyne800(22px, $hover-color);
 }
 
 h1 > span {
@@ -40,18 +36,15 @@ h1 > span {
 }
 
 h2 {
-  font-family: "Syne";
-  font-weight: 700;
-  font-size: 30px;
-  color: #1d6154;
+  @include fontSyne700(30px, $main-color);
 }
 
 .active {
-	color: black;
+	color: $black;
 	font-size: 19px;
 	font-weight: 700;
 }
 
 .errorChamp {
-  color: red;
+  color: $red;
 }
