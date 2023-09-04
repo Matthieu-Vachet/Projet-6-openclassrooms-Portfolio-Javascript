@@ -17,6 +17,7 @@
     
     <script type="module" src="/js/login.js"defer></script>
     <script type="module" src="/js/navLocation.js" defer></script>
+    <script src="/js/toggle-password.js" defer></script>
 
 </head>
     
@@ -69,20 +70,5 @@
     <!-- FOOTER END -->
 
 </body>
-
-<script>
-    // Fonction togglePasswordVisibility
-function togglePasswordVisibility() {
-    const passwordInput = document.getElementById("password")
-    const togglePassword = document.querySelector(".toggle-password")
-    if (passwordInput.type === "password") {
-        passwordInput.type = "text";
-        togglePassword.innerHTML = '<i class="fa fa-eye fa-xl"></i>';
-    } else {
-        passwordInput.type = "password";
-        togglePassword.innerHTML = '<i class="fa fa-eye-slash fa-xl"></i>';
-    }
-}
-</script>
 
 </html>
