@@ -63,24 +63,6 @@
     margin: 10px;
   }
 
-  & .login-btn {
-    width: 179px;
-    height: 36px;
-    background: $main-color;
-    border: none;
-    border-radius: 60px;
-    box-shadow: $shadow;
-    @include fontSyne700(14px, $white);
-    margin-top: 27px;
-    cursor: pointer;
-
-    &:hover {
-      background-color: $main-hover;
-      color: $white;
-      transform: scale(1.1);
-    }
-  }
-
   & .forgot-password {
     @include fontWorkSans500(14px, #3d3d3d);
     margin-top: 26px;

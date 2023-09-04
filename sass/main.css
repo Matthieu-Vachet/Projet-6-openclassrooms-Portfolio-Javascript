@@ -399,6 +399,87 @@ i {
   gap: 15px;
 }
 
+.login-section .login-btn {
+  width: 179px;
+  height: 36px;
+  background: #1d6154;
+  border: none;
+  border-radius: 60px;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+  font-size: 14px;
+  color: #fff;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Syne";
+  margin-top: 27px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.login-section .login-btn:hover {
+  background-color: #0e2f28;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.modal .modal-wrapper button {
+  width: 237px;
+  height: 36px;
+  background-color: #1d6154;
+  font-size: 14px;
+  color: #fff;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Syne";
+  border: none;
+  border-radius: 60px;
+  cursor: pointer;
+  transition: scale 0.4s ease;
+}
+.modal .modal-wrapper button:hover {
+  scale: 1.1;
+}
+
+#confirmation-modal .modal-content .confirm-button, #confirmation-modal .modal-content .cancel-button {
+  height: 36px;
+  width: 200px;
+  border-radius: 60px;
+  border: none;
+  background: #1d6154;
+  font-size: 14px;
+  color: #fff;
+  font-weight: 500;
+  font-style: normal;
+  font-family: "Syne";
+  text-align: center;
+  margin: 5px 10px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+#confirmation-modal .modal-content .confirm-button:hover, #confirmation-modal .modal-content .cancel-button:hover {
+  background-color: #0e2f28;
+  scale: 1.03;
+}
+
+#file-submit {
+  padding: 10px 49px;
+  background: #A7A7A7;
+  font-size: 14px;
+  color: #fff;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Syne";
+  margin: 0 auto;
+  width: 237px;
+  height: 36px;
+  border-radius: 60px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+#file-submit:hover {
+  transform: scale(1.1);
+}
+
 .modal {
   display: none;
   align-items: center;
@@ -439,23 +520,6 @@ i {
   padding: 0px 105px;
   grid-template-columns: repeat(5, 1fr);
   margin-bottom: 60px;
-}
-.modal .modal-wrapper button {
-  width: 237px;
-  height: 36px;
-  background-color: #1d6154;
-  font-size: 14px;
-  color: #fff;
-  font-weight: 700;
-  font-style: normal;
-  font-family: "Syne";
-  border: none;
-  border-radius: 60px;
-  cursor: pointer;
-  transition: scale 0.4s ease;
-}
-.modal .modal-wrapper button:hover {
-  scale: 1.1;
 }
 .modal .modal-wrapper .suppr {
   padding-top: 23px;
@@ -617,25 +681,6 @@ i {
   box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
   margin-top: 10px;
 }
-.modal .modal-wrapper .add-form input[type=submit] {
-  padding: 10px 49px;
-  background: #A7A7A7;
-  font-size: 14px;
-  color: #fff;
-  font-weight: 700;
-  font-style: normal;
-  font-family: "Syne";
-  margin: 0 auto;
-  width: 237px;
-  height: 36px;
-  border-radius: 60px;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.4s ease;
-}
-.modal .modal-wrapper .add-form input[type=submit]:hover {
-  transform: scale(1.1);
-}
 .modal .modal-wrapper .add-form .separator {
   margin: 0;
 }
@@ -682,26 +727,6 @@ i {
   font-family: "Work Sans";
   line-height: normal;
   margin-bottom: 20px;
-}
-#confirmation-modal .modal-content .confirm-button, #confirmation-modal .modal-content .cancel-button {
-  height: 36px;
-  width: 200px;
-  border-radius: 60px;
-  border: none;
-  background: #1d6154;
-  font-size: 14px;
-  color: #fff;
-  font-weight: 500;
-  font-style: normal;
-  font-family: "Syne";
-  text-align: center;
-  margin: 5px 10px;
-  cursor: pointer;
-  transition: all 0.5s ease;
-}
-#confirmation-modal .modal-content .confirm-button:hover, #confirmation-modal .modal-content .cancel-button:hover {
-  background-color: #0e2f28;
-  scale: 1.03;
 }
 
 .login-section {
@@ -767,26 +792,6 @@ i {
   text-decoration: underline;
   text-underline-offset: 2px;
   margin: 10px;
-}
-.login-section .login-btn {
-  width: 179px;
-  height: 36px;
-  background: #1d6154;
-  border: none;
-  border-radius: 60px;
-  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
-  font-size: 14px;
-  color: #fff;
-  font-weight: 700;
-  font-style: normal;
-  font-family: "Syne";
-  margin-top: 27px;
-  cursor: pointer;
-}
-.login-section .login-btn:hover {
-  background-color: #0e2f28;
-  color: #fff;
-  transform: scale(1.1);
 }
 .login-section .forgot-password {
   font-size: 14px;

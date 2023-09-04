@@ -33,24 +33,5 @@
       line-height: normal;
       margin-bottom: 20px;
     }
-
-    & .confirm-button,
-    & .cancel-button {
-      height: 36px;
-      width: 200px;
-      border-radius: 60px;
-      border: none;
-      background: $main-color;
-      @include fontSyne500(14px, $white);
-      text-align: center;
-      margin: 5px 10px;
-      cursor: pointer;
-      transition: all 0.5s ease;
-
-      &:hover {
-        background-color: $main-hover;
-        scale: 1.03;
-      }
-    }
   }
 }

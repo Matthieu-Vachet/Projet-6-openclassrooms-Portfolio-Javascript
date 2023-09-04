@@ -1,3 +1,88 @@
 // -----------------------------------------------------------------------------
 // Ce fichier contient tous le scss de la partie Boutton.
 // -----------------------------------------------------------------------------
+
+// Boutton section Login //
+.login-section {
+  & .login-btn {
+    width: 179px;
+    height: 36px;
+    background: $main-color;
+    border: none;
+    border-radius: 60px;
+    box-shadow: $shadow;
+    @include fontSyne700(14px, $white);
+    margin-top: 27px;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    &:hover {
+      background-color: $main-hover;
+      color: $white;
+      transform: scale(1.1);
+    }
+  }
+}
+
+// Boutton section Modal main //
+.modal {
+  & .modal-wrapper {
+    & button {
+      width: 237px;
+      height: 36px;
+      background-color: $main-color;
+      @include fontSyne700(14px, $white);
+      border: none;
+      border-radius: 60px;
+      cursor: pointer;
+      transition: scale 0.4s ease;
+
+      &:hover {
+        scale: 1.1;
+      }
+    }
+  }
+}
+
+// Boutton section Modal confirmation //
+#confirmation-modal {
+  & .modal-content {
+    & .confirm-button,
+    & .cancel-button {
+      height: 36px;
+      width: 200px;
+      border-radius: 60px;
+      border: none;
+      background: $main-color;
+      @include fontSyne500(14px, $white);
+      text-align: center;
+      margin: 5px 10px;
+      cursor: pointer;
+      transition: all 0.5s ease;
+
+      &:hover {
+        background-color: $main-hover;
+        scale: 1.03;
+      }
+    }
+  }
+}
+
+// Boutton section Modal sumbit add projet //
+
+#file-submit {
+  padding: 10px 49px;
+  background: $input-bg;
+  @include fontSyne700(14px, $white);
+  margin: 0 auto;
+  width: 237px;
+  height: 36px;
+  border-radius: 60px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}

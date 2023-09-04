@@ -118,23 +118,6 @@
         margin-top: 10px;
       }
 
-      & input[type="submit"] {
-        padding: 10px 49px;
-        background: $input-bg;
-        @include fontSyne700(14px, $white);
-        margin: 0 auto;
-        width: 237px;
-        height: 36px;
-        border-radius: 60px;
-        border: none;
-        cursor: pointer;
-        transition: transform 0.4s ease;
-
-        &:hover {
-          transform: scale(1.1);
-        }
-      }
-
       & .separator {
         margin: 0;
       }
