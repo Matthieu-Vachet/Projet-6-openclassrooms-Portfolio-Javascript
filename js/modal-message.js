@@ -82,7 +82,7 @@ export const getUserConfirmationSuppr = () => {
 * Affiche une modal de confirmation avec un message donné.
 * @param {string} message - Le message à afficher dans la modal.
 */
-export const showModalConfirm = (message) => {
+export const showModalConfirm = (message/**, duration = 5000 */) => {
   // Création des éléments de la modal
   const aside = document.createElement("aside");
 
@@ -108,4 +108,15 @@ export const showModalConfirm = (message) => {
 
   // Ajout de la modal au document
   document.body.appendChild(aside);
+
+  // Temporisation pour retirer la modal après un certain délai
+//   setTimeout(() => {
+//     document.body.removeChild(aside);
+//   }, duration);
+// };
+
+  aside.addEventListener("click", () => {
+      closeModal();
+  })
+  
 };

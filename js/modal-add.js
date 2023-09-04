@@ -97,7 +97,7 @@ form.addEventListener("submit", async (e) => {
 
         await postApi(formData, userOnline);
 
-        showModalConfirm("Votre travail a bien été ajouté");
+        showModalConfirm("Votre travail a bien été ajouté"/**, 5000 */);
 
         form.reset();
 
