@@ -99,9 +99,15 @@ export const showModalConfirm = (message/**, duration = 5000 */) => {
   const messageText = document.createElement("p");
   messageText.innerText = message;
 
+  const confirmButton = document.createElement("button");
+  confirmButton.id = "confirm-delete";
+  confirmButton.classList.add("confirm-button");
+  confirmButton.innerText = "Ok";
+
   // Ajout des éléments à la modal
   modalContent.appendChild(title);
   modalContent.appendChild(messageText);
+  modalContent.appendChild(confirmButton);
 
   confirmationModal.appendChild(modalContent);
   aside.appendChild(confirmationModal);
@@ -115,8 +121,9 @@ export const showModalConfirm = (message/**, duration = 5000 */) => {
 //   }, duration);
 // };
 
-  aside.addEventListener("click", () => {
-      closeModal();
-  })
+  // Gestion des événements des boutons
+  confirmButton.addEventListener("click", () => {
+    closeModal();
+});
   
 };
