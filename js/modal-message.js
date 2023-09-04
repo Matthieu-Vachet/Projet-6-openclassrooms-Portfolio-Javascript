@@ -1,11 +1,3 @@
-  /**
-   * Ferme la modal de confirmation.
-   */
-const closeModal = () => {
-  // Suppression de la modal du document
-  document.body.removeChild(aside);
-};
-
 /**
  * Affiche une modal de confirmation de suppression avec un message donné.
  * @param {string} message - Le message à afficher dans la modal.
@@ -51,38 +43,46 @@ export const showModalSuppr = (message) => {
 
   // Gestion des événements des boutons
   confirmButton.addEventListener("click", () => {
-      closeModal();
+    closeModal();
   });
 
   cancelButton.addEventListener("click", () => {
-      closeModal();
+    closeModal();
   });
+
+  /**
+   * Ferme la modal de confirmation.
+   */
+  const closeModal = () => {
+    // Suppression de la modal du document
+    document.body.removeChild(aside);
+  };
 };
 
 /**
-* Récupère la confirmation de l'utilisateur pour une suppression.
-* @returns {Promise<boolean>} Une promesse qui se résout avec la valeur `true` si l'utilisateur a confirmé la suppression, sinon `false`.
-*/
+ * Récupère la confirmation de l'utilisateur pour une suppression.
+ * @returns {Promise<boolean>} Une promesse qui se résout avec la valeur `true` si l'utilisateur a confirmé la suppression, sinon `false`.
+ */
 export const getUserConfirmationSuppr = () => {
   return new Promise((resolve) => {
-      const confirmButton = document.getElementById("confirm-delete");
-      const cancelButton = document.getElementById("cancel-delete");
+    const confirmButton = document.getElementById("confirm-delete");
+    const cancelButton = document.getElementById("cancel-delete");
 
-      confirmButton.addEventListener("click", () => {
-          resolve(true); // L'utilisateur a confirmé la suppression
-      });
+    confirmButton.addEventListener("click", () => {
+      resolve(true); // L'utilisateur a confirmé la suppression
+    });
 
-      cancelButton.addEventListener("click", () => {
-          resolve(false); // L'utilisateur a annulé la suppression
-      });
+    cancelButton.addEventListener("click", () => {
+      resolve(false); // L'utilisateur a annulé la suppression
+    });
   });
 };
 
 /**
-* Affiche une modal de confirmation avec un message donné.
-* @param {string} message - Le message à afficher dans la modal.
-*/
-export const showModalConfirm = (message/**, duration = 5000 */) => {
+ * Affiche une modal de confirmation avec un message donné.
+ * @param {string} message - Le message à afficher dans la modal.
+ */
+export const showModalConfirm = (message /**, duration = 5000 */) => {
   // Création des éléments de la modal
   const aside = document.createElement("aside");
 
@@ -116,14 +116,21 @@ export const showModalConfirm = (message/**, duration = 5000 */) => {
   document.body.appendChild(aside);
 
   // Temporisation pour retirer la modal après un certain délai
-//   setTimeout(() => {
-//     document.body.removeChild(aside);
-//   }, duration);
-// };
+  //   setTimeout(() => {
+  //     document.body.removeChild(aside);
+  //   }, duration);
+  // };
 
   // Gestion des événements des boutons
   confirmButton.addEventListener("click", () => {
     closeModal();
-});
-  
+  });
+
+  /**
+   * Ferme la modal de confirmation.
+   */
+  const closeModal = () => {
+    // Suppression de la modal du document
+    document.body.removeChild(aside);
+  };
 };
