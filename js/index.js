@@ -1,19 +1,22 @@
 import { works } from "./api.js";
-import { categories} from "./api.js"
+import { categories } from "./api.js";
 
-
-/** Récuperation des emplacements html  */
+/** 
+ * Récupération des emplacements HTML.
+ */
 const gallery = document.querySelector(".gallery");
 const filter = document.querySelector(".button-filtre");
 
-
-/** Creation de la fonction generant la gallerie a afficher */
-export const generateGallery = (elements) =>  {
+/** 
+ * Fonction pour générer la galerie à afficher.
+ * @param {Array} elements - Les éléments à afficher dans la galerie.
+ */
+export const generateGallery = (elements) => {
     document.querySelector(".gallery").innerHTML = "";
     for (let i in elements) {
 
         /** Création des balises */
-        const figure = document.createElement("figure")
+        const figure = document.createElement("figure");
         const image = document.createElement("img");
         const title = document.createElement("figcaption");
 
@@ -31,8 +34,10 @@ export const generateGallery = (elements) =>  {
     }
 }
 
-/** fonction pour l affichage des differents filtres */
-
+/** 
+ * Fonction pour l'affichage des différents filtres.
+ * @param {Array} elements - Les éléments à afficher comme filtres.
+ */
 const generateFilter = (elements) => {
     document.querySelector(".button-filtre").innerHTML = "";
     const buttonAll = document.createElement("button");
@@ -45,34 +50,30 @@ const generateFilter = (elements) => {
         filter.appendChild(button);
     }
 }
-/** Affichage des categories et de l ensemble des travaux */
 
+/** Affichage des catégories et de l'ensemble des travaux */
 generateFilter(categories);
 generateGallery(works);
 
-
-
-
 /** Actions sur les boutons filtres */
-
 const filterButtons = document.querySelectorAll(".button-filtre button");
 
-filterButtons[0].setAttribute("class","btn_active");
+filterButtons[0].setAttribute("class", "btn_active");
 
 for (let i = 0; i < filterButtons.length; i++) {
-    
+
     filterButtons[i].addEventListener("click", function () {
 
         for (let i = 0; i < filterButtons.length; i++) {
             filterButtons[i].removeAttribute("class", "btn_active");
         }
-        
+
         filterButtons[i].setAttribute("class", "btn_active");
         if (i == 0) {
             generateGallery(works);
         } else {
             const ElementsFiltered = works.filter(element => element.categoryId == i);
-            generateGallery(ElementsFiltered)
+            generateGallery(ElementsFiltered);
         }
     })
 }

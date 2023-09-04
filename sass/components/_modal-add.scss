@@ -1,3 +1,7 @@
+// -----------------------------------------------------------------------------
+// Ce fichier contient tous le scss de la partie Modal d'ajout de projets.
+// -----------------------------------------------------------------------------
+
 .modal {
   display: none;
   align-items: center;
@@ -16,7 +20,7 @@
     height: 730px;
     border-radius: 10px;
 
-    & .close-btn  {
+    & .close-btn {
       text-align: right;
       margin: 20px;
 
@@ -82,7 +86,7 @@
           padding: 10px 33px;
           cursor: pointer;
         }
-        
+
         & p {
           padding-bottom: 19px;
         }

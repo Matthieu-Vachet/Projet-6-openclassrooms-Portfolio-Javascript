@@ -1,3 +1,7 @@
+// -----------------------------------------------------------------------------
+// Ce fichier contient tous imports scss.
+// -----------------------------------------------------------------------------
+
 @charset "UTF-8";
 
 // 1. Configuration et aides
@@ -7,10 +11,12 @@
 @import "./base/reset", "./base/base", "./base/fonts";
 
 // 4. Sections liées à la mise en page
-@import "./layout/header", "./layout/main","./layout/footer", "./layout/mode-edition";
+@import "./layout/header", "./layout/main", "./layout/footer",
+  "./layout/mode-edition";
 
 // 5. Composants
-@import "./components/button", "./components/modal-main", "./components/modal-add", "./components/modal-message";
+@import "./components/button", "./components/modal-main",
+  "./components/modal-add", "./components/modal-message";
 
 // 6. Styles spécifiques à la page
 @import "./pages/login";

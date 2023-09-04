@@ -1,3 +1,7 @@
+// -----------------------------------------------------------------------------
+// Ce fichier contient tous les mixins Fonts.
+// -----------------------------------------------------------------------------
+
 @mixin fontSyne400(
   $size,
   $color,
@@ -54,7 +58,6 @@
   font-family: $family;
 }
 
-
 @mixin fontWorkSans400(
   $size,
   $color,
@@ -96,4 +99,3 @@
   font-style: $style;
   font-family: $family;
 }
-

@@ -1,3 +1,7 @@
+// -----------------------------------------------------------------------------
+// Ce fichier contient tous le scss de la partie Modal de message et de confirmation.
+// -----------------------------------------------------------------------------
+
 #confirmation-modal {
   display: flex;
   align-items: center;
@@ -25,8 +29,8 @@
     }
 
     & p {
-      @include fontWorkSans600(18px, #3D3D3D);
-        line-height: normal;
+      @include fontWorkSans600(18px, #3d3d3d);
+      line-height: normal;
       margin-bottom: 20px;
     }
 
@@ -46,7 +50,6 @@
       &:hover {
         background-color: $main-hover;
         scale: 1.03;
-
       }
     }
   }
