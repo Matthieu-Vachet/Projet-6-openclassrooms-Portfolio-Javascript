@@ -1,6 +1,6 @@
 import { deleteApi, worksWrapper, works } from "./api.js";
 import { generateGallery } from "./index.js";
-import { showModal } from "./modal-message.js";
+import { showModalSuppr, getUserConfirmationSuppr } from "./modal-message.js";
 const closeModal = document.querySelectorAll(".fa-xmark");
 const returnModal = document.querySelectorAll(".fa-arrow-left");
 const modalMain = document.querySelector(".modal-main");
@@ -59,11 +59,11 @@ export const generateMiniGallery = (elements) => {
 
 export const trashListener = (element, index) => {
   element.addEventListener("click", async () => {
-    // Afficher votre modal de confirmation en utilisant votre fonction showModal
-    showModal("Êtes-vous sûr de vouloir supprimer cette photo ?");
+    // Afficher votre modal de confirmation en utilisant votre fonction showModalSuppr
+    showModalSuppr("Êtes-vous sûr de vouloir supprimer cette photo ?");
 
     // Attendre la réponse de l'utilisateur
-    const confirmDelete = await getUserConfirmation();
+    const confirmDelete = await getUserConfirmationSuppr();
 
     // Vérifier si l'utilisateur a confirmé la suppression
     if (!confirmDelete) {
@@ -80,20 +80,6 @@ export const trashListener = (element, index) => {
   });
 };
 
-const getUserConfirmation = () => {
-  return new Promise((resolve) => {
-    const confirmButton = document.getElementById("confirm-delete");
-    const cancelButton = document.getElementById("cancel-delete");
-
-    confirmButton.addEventListener("click", () => {
-      resolve(true); // L'utilisateur a confirmé la suppression
-    });
-
-    cancelButton.addEventListener("click", () => {
-      resolve(false); // L'utilisateur a annulé la suppression
-    });
-  });
-};
 // export const trashListener = (element, index) => {
 //   element.addEventListener("click", async () => {
 //     const confirmDelete = confirm(

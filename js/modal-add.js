@@ -1,6 +1,7 @@
 import { postApi, categories, worksWrapper } from "./api.js";
 import { generateGallery } from "./index.js";
-import { generateMiniGallery, trash, trashListener } from "./modal.js";
+import { generateMiniGallery } from "./modal.js";
+import { showModalConfirm } from "./modal-message.js";
 
 const fileZone = document.querySelector(".add-file-zone");
 const fileInput = document.getElementById("add-file");
@@ -13,7 +14,6 @@ let imageElement = "";
 let imageTitle = "";
 let imageCategorie = "";
 let file = "";
-
 
 for (let i in categories) {
   const option = document.createElement("option");
@@ -53,7 +53,6 @@ fileInput.addEventListener("change", (e) => {
   const imageUrl = URL.createObjectURL(file);
 
   displayImage(imageUrl);
-
 });
 
 titleInput.addEventListener("input", (e) => {
@@ -70,38 +69,42 @@ form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   if (!imageTitle | !imageCategorie | !imageElement) {
-    alert("Veuillez remplir tous les champs");
+    const error = document.querySelector(".errorChamp");
+    error.innerText = "Veuillez remplir tous les champs";
+    error.classList.add("errorchamp");
     return;
   }
 
   if (file.size > 4194304) {
-    alert("Fichier trop volumineux");
+    const error = document.querySelector(".errorChamp");
+    error.innerText = "Fichier trop volumineux";
+    error.classList.add("errorChamp");
     return;
   } else {
+
     const userOnline = JSON.parse(sessionStorage.getItem("userOnline"));
     const formData = new FormData(form);
 
     await postApi(formData, userOnline);
-
-    
- 
-    alert("Votre photo à bien été ajoutée");
+    showModalConfirm("Votre travail a bien été ajouté");
     form.reset();
-   
+
     imageElement = "";
     imageTitle = "";
     imageCategorie = "";
-   
+
     displayImage("");
 
     const newWorks = await worksWrapper();
-    
+
     generateGallery(newWorks);
     generateMiniGallery(newWorks);
-    console.log(newWorks)
+
+    console.log(newWorks);
+
     // for (let i = 0; i < trash.length; i++) {
     //   trashListener(trash[i], i);
     // }
- 
   }
+  return false;
 });
