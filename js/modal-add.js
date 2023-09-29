@@ -17,10 +17,10 @@ let file = "";
 
 // Ajout des options de catégories au menu déroulant
 for (let i in categories) {
-    const option = document.createElement("option");
-    option.innerText = categories[i].name;
-    option.value = categories[i].id;
-    categorieInput.append(option);
+        const option = document.createElement("option");
+        option.innerText = categories[i].name;
+        option.value = categories[i].id;
+        categorieInput.append(option);
 }
 
 /**
@@ -28,46 +28,46 @@ for (let i in categories) {
  * @param {string} url - L'URL de l'image.
  */
 const displayImage = (url) => {
-    if (previewIspresent) {
-        document.querySelector(".add-file-zone img").remove();
-    }
+        if (previewIspresent) {
+                document.querySelector(".add-file-zone img").remove();
+        }
 
-    imageElement = document.createElement("img");
-    imageElement.src = url;
-    imageElement.classList.add("uploaded-image");
+        imageElement = document.createElement("img");
+        imageElement.src = url;
+        imageElement.classList.add("uploaded-image");
 
-    fileZone.querySelector("i").style.display = "none";
-    fileZone.querySelector("label").style.display = "none";
-    fileZone.querySelector("p").style.display = "none";
-    fileZone.prepend(imageElement);
-    previewIspresent = true;
+        fileZone.querySelector("i").style.display = "none";
+        fileZone.querySelector("label").style.display = "none";
+        fileZone.querySelector("p").style.display = "none";
+        fileZone.prepend(imageElement);
+        previewIspresent = true;
 };
 
 // Événement de changement de fichier
 fileInput.addEventListener("change", (e) => {
-    const fileExtensionRegex = /\.(jpe?g|png)$/i;
+        const fileExtensionRegex = /\.(jpe?g|png)$/i;
 
-    if (
+        if (
         e.target.files.lengh === 0 ||
         !fileExtensionRegex.test(e.target.files[0].name)
     ) {
-        return;
-    }
+                return;
+        }
 
-    file = e.target.files[0];
-    const imageUrl = URL.createObjectURL(file);
+        file = e.target.files[0];
+        const imageUrl = URL.createObjectURL(file);
 
-    displayImage(imageUrl);
+        displayImage(imageUrl);
 });
 
 // Événement de saisie pour le champ titre
 titleInput.addEventListener("input", (e) => {
-    imageTitle = e.target.value;
+        imageTitle = e.target.value;
 });
 
 // Événement de saisie pour le champ catégorie
 categorieInput.addEventListener("input", (e) => {
-    imageCategorie = e.target.value;
+        imageCategorie = e.target.value;
 });
 
 // ajout de travaux
@@ -77,43 +77,43 @@ categorieInput.addEventListener("input", (e) => {
  * @param {Event} e - L'événement de soumission.
  */
 form.addEventListener("submit", async (e) => {
-    e.preventDefault();
+        e.preventDefault();
 
-    if (!imageTitle | !imageCategorie | !imageElement) {
-        const error = document.querySelector(".errorChamp");
-        error.innerText = "Veuillez remplir tous les champs";
-        error.classList.add("errorchamp");
-        return;
-    }
+        if (!imageTitle | !imageCategorie | !imageElement) {
+                const error = document.querySelector(".errorChamp");
+                error.innerText = "Veuillez remplir tous les champs";
+                error.classList.add("errorchamp");
+                return;
+        }
 
-    if (file.size > 4194304) {
-        const error = document.querySelector(".errorChamp");
-        error.innerText = "Fichier trop volumineux";
-        error.classList.add("errorChamp");
-        return;
-    } else {
-        const userOnline = JSON.parse(sessionStorage.getItem("userOnline"));
-        const formData = new FormData(form);
+        if (file.size > 4194304) {
+                const error = document.querySelector(".errorChamp");
+                error.innerText = "Fichier trop volumineux";
+                error.classList.add("errorChamp");
+                return;
+        } else {
+                const userOnline = JSON.parse(sessionStorage.getItem("userOnline"));
+                const formData = new FormData(form);
 
-        await postApi(formData, userOnline);
+                await postApi(formData, userOnline);
 
-        showModalConfirm("Votre travail a bien été ajouté"/**, 5000 */);
+                showModalConfirm("Votre travail a bien été ajouté"/**, 5000 */);
 
-        form.reset();
+                form.reset();
 
-        imageElement = "";
-        imageTitle = "";
-        imageCategorie = "";
+                imageElement = "";
+                imageTitle = "";
+                imageCategorie = "";
 
-        displayImage("");
+                displayImage("");
 
-        const newWorks = await worksWrapper();
+                const newWorks = await worksWrapper();
 
-        generateGallery(newWorks);
-        generateMiniGallery(newWorks);
+                generateGallery(newWorks);
+                generateMiniGallery(newWorks);
 
-        console.log(newWorks);
-    }
+                console.log(newWorks);
+        }
 
-    return false;
+        return false;
 });
